@@ -1,0 +1,1 @@
+<h1>heading from index</h1>
