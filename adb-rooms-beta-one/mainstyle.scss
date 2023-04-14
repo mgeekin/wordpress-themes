@@ -1,0 +1,285 @@
+/* Reset styles: This section includes CSS rules that reset the default styles applied by browsers to HTML elements, allowing you to start from a clean slate. */
+* {
+    margin         : 0;
+    padding        : 0;
+    text-decoration: none;
+    list-style     : none;
+    box-sizing     : border-box;
+}
+
+
+
+
+
+:root {
+    --hue           : 332;
+    --sat           : 80%;
+    --light         : 50%;
+    --alpha         : 1;
+    --hueAscent     : 332;
+    --satAscent     : 100%;
+    --lightAscent   : 50%;
+    --linkColor     : hsla(var(--hueAscent), var(--satAscent), var(--lightAscent), var(--alpha));
+    --linkColorHover: hsla(var(--hueAscent), var(--satAscent), var(--lightAscent), .8);
+
+    --headerHeight: 3em;
+}
+
+/* Typography: This section includes CSS rules for setting the font family, size, weight, line-height, and other properties related to text. */
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Montserrat:ital,wght@0,400;1,300;1,400&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;0,200;1,100&display=swap');
+
+body {
+    font-family      : 'Poppins', 'Courier New', Courier, monospace;
+    background-color : hsl(var(--hue, 335), 20%, 95%);
+    color            : #444;
+    font-size        : 1rem;
+    font-family      : 'Open Sans', sans-serif;
+    color-scheme     : light dark;
+    scroll-behavior  : smooth;
+    scroll-snap-align: start;
+    line-height      : 1.6em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family   : 'Cantarell', 'Montserrat', sans-serif;
+    font-weight   : 400;
+    color         : hsl(var(--hue), var(--sat, 100%), 50%);
+    padding       : 0;
+    padding-bottom: .5em;
+    margin        : 0;
+
+}
+
+main,
+.container {
+    max-width: calc(100% - 2em);
+    margin   : 0 auto;
+    padding  : 0 1em;
+}
+
+h1 {
+    font-size: clamp(1.5em, 5vw, 3em);
+}
+
+h2 {
+    font-size: clamp(1.3em, 5vw, 2.5em);
+}
+
+h3 {
+    font-size : clamp(1.3em, 5vw, 2.5em);
+    font-style: italic;
+}
+
+h4 {
+    font-size: clamp(1.1em, 5vw, 2em);
+}
+
+h5 {
+    font-size : clamp(1.1em, 10vw, 2em);
+    font-style: italic;
+}
+
+
+/* Colors: This section includes CSS rules for defining the colors used throughout your website, such as background colors, text colors, and border colors. */
+/* Layout: This section includes CSS rules for controlling the positioning and size of elements on the page, such as margins, padding, float, and display. */
+
+
+
+main {
+    position      : static;
+    top           : 4em;
+    margin        : 0 auto;
+    padding-inline: (1em, 10vw, 20%);
+}
+
+/* Navigation: This section includes CSS rules for styling navigation menus, including dropdowns, hover effects, and active states. */
+a {
+    position       : relative;
+    text-decoration: none;
+    color          : var(--linkColor, aqua);
+
+
+    &:visited {
+        text-decoration: none;
+    }
+
+    &:hover {
+        color: var(--linkColorHover, hsl(332, 100%, 50%));
+
+
+        &:after {
+            width: 100%;
+        }
+
+    }
+
+    &:after {
+        position        : absolute;
+        left            : 0;
+        top             : 0;
+        content         : "";
+        width           : 00%;
+        // height       : 100%;
+        border-bottom   : .2ex solid var(--linkColorHover);
+        transition      : width .3s ease-in-out;
+        margin-bottom   : .3ex;
+
+    }
+
+
+}
+
+section {
+    padding: 2em;
+}
+
+p {
+    padding-block: .5em;
+
+}
+
+blockquote {
+    padding-block : .5em;
+    padding-inline: 1em;
+    border-left   : 5px solid #ccc;
+    font-style    : italic;
+    position      : relative;
+
+    &:before {
+        content  : '“';
+        position : absolute;
+        left     : 0;
+        top      : 0;
+        font-size: 2em;
+        color    : #ccc;
+    }
+}
+
+/* Forms: This section includes CSS rules for styling form elements, such as input fields, checkboxes, and radio buttons. */
+/* Buttons: This section includes CSS rules for styling buttons, including hover and active states. */
+/* Images: This section includes CSS rules for controlling the size and alignment of images on the page. */
+/* Media queries: This section includes CSS rules that apply only when certain conditions are met, such as the size of the screen or device orientation. */
+
+
+
+
+
+
+
+
+
+
+
+header,
+.header {
+    position           : sticky;
+    top                : 0px;
+    min-height         : var(--headerHeight, 3em);
+    // background-color: #fff;
+    color              : #222;
+    display            : flex;
+    justify-content    : space-between;
+    align-items        : center;
+    padding            : 0 1em;
+    z-index            : 1000;
+    font-weight        : 700;
+    border-bottom      : 1px solid #ccc;
+    background-color   : hsl(var(--hue, 335), 20%, 95%);
+    box-shadow         : 2px 0px 4px gray;
+
+    * {
+        text-transform: capitalize;
+    }
+
+
+
+}
+
+
+
+#logo {
+    height: 1.5em;
+}
+
+
+// search
+
+.search {
+    font-size      : .9em;
+    width          : 450px;
+    display        : flex;
+    justify-content: center;
+    align-self     : center;
+
+    .search-block {
+        width                   : 100%;
+        // display              : grid;
+        // grid-gap             : 1em;
+        // grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+
+        border       : 1px solid #ccc;
+        border-radius: 2em;
+
+        search-block-items {
+            display: inline-block;
+            padding: 1em;
+            margin : 0 auto;
+        }
+    }
+
+}
+
+
+
+
+
+
+
+.postgrid {
+    display              : grid;
+    grid-gap             : 2em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding              : 4em;
+
+
+    .postgrid-item {
+        position: relative;
+
+        border-radius   : .5em;
+        box-shadow      : 1px 1px 10px black;
+        background-color: hsla(var(--hueAscent), var(--satAscent), var(--lightAscent), .02);
+
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            transform: scale(1.02);
+            filter   : brightness(1.2);
+        }
+
+        .postgrid-item-image>img {
+            object-fit   : cover;
+            max-width    : 100%;
+            border-radius: .5em .5em 0 0;
+
+        }
+
+        .postgrid-item-content {
+            padding: .5em;
+
+            .postgrid-cost {
+                display    : block;
+                font-weight: 700;
+            }
+        }
+
+        .postgrid-item-title {
+            color     : #555;
+            font-style: normal;
+        }
+    }
+}
