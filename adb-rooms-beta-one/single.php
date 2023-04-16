@@ -20,7 +20,7 @@
                 </a>
             </h1>
             <p>
-                <?the_excerpt();?>
+                <?the_content();?>
             </p>
         </section>
         <?endwhile;?>
@@ -29,9 +29,6 @@
 
 
 
-    <?php
-    include("postgrid.php")
-    ?>
 </main>
 
 

@@ -12,7 +12,7 @@
     <div class="container">
 
         <?php if ( have_posts() ): ?>
-        <?php while ( have_posts() ) : the_post();?>
+        <?php while ( have_posts() ):  the_post();?>
 
         <section>
             <h1><a href=<?php the_permalink();?>>
@@ -20,18 +20,15 @@
                 </a>
             </h1>
             <p>
-                <?the_excerpt();?>
+                <?php the_content(); ?>
             </p>
         </section>
-        <?endwhile;?>
-        <?endif;?>
+        <?php endwhile; ?>
+        <?php endif; ?>
     </div>
 
 
 
-    <?php
-    include("postgrid.php")
-    ?>
 </main>
 
 

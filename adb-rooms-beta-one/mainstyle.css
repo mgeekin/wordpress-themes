@@ -141,44 +141,43 @@ blockquote:before {
 /* Buttons: This section includes CSS rules for styling buttons, including hover and active states. */
 /* Images: This section includes CSS rules for controlling the size and alignment of images on the page. */
 /* Media queries: This section includes CSS rules that apply only when certain conditions are met, such as the size of the screen or device orientation. */
-header,
+#header,
 .header {
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: 1fr 1fr 1fr;
   position: sticky;
   top: 0px;
   min-height: var(--headerHeight, 3em);
   color: #222;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 1em;
   z-index: 1000;
   font-weight: 700;
   border-bottom: 1px solid #ccc;
   background-color: hsl(var(--hue, 335), 20%, 95%);
   box-shadow: 2px 0px 4px gray;
-}
-header *,
-.header * {
   text-transform: capitalize;
 }
-
-#logo {
+#header #logo,
+.header #logo {
   height: 1.5em;
 }
-
-.search {
+#header .search,
+.header .search {
   font-size: 0.9em;
   width: 450px;
   display: flex;
   justify-content: center;
   align-self: center;
 }
-.search .search-block {
+#header .search .search-block,
+.header .search .search-block {
   width: 100%;
   border: 1px solid #ccc;
   border-radius: 2em;
 }
-.search .search-block search-block-items {
+#header .search .search-block search-block-items,
+.header .search .search-block search-block-items {
   display: inline-block;
   padding: 1em;
   margin: 0 auto;

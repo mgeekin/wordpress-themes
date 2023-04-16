@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE <?php bloginfo('html_type'); ?>>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
 <!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
@@ -6,7 +6,7 @@
 <html>
 
 <head>
-    <meta charset="utf-8">
+    <meta charset=<?php bloginfo('charset'); ?>>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title><?php the_title();?></title>
     <meta name="description" content="">
@@ -19,23 +19,23 @@
 
     <div id="wp-app">
 
-        <div class="wp-head">
-
+        <div class="wp-fse-head">
+            <!-- wp:header -->
+            <!-- /wp:header -->
         </div>
 
 
-        <header class="header">
-
-            <!-- wp:header -->
-            <!-- /wp:header -->
-
+        <header id="header" class="header">
             <a href="/" id="home">
-                <img id="logo" class="logo" src="<?   echo get_template_directory_uri() ; ?>/img/adbroomslogo.png"
-                    class="filter-hue" alt="<? bloginfo( " name" );?>"
-                />
+                <img id="logo" class="logo" src="<?php   echo get_template_directory_uri() ; ?>/img/adbroomslogo.png"
+                    class="filter-hue" alt="<?php bloginfo( " name" );?>" title="
+                <?php bloginfo( " tagname" );?>" />
             </a>
             <span>
                 <?include("searchPart.php") ?>
             </span>
             <span>login</span>
+
+
+
         </header>
