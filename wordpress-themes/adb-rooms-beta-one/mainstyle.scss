@@ -14,11 +14,11 @@
 :root {
     --hue           : 332;
     --sat           : 80%;
-    --light         : 50%;
+    --light         : 40%;
     --alpha         : 1;
     --hueAscent     : 332;
     --satAscent     : 100%;
-    --lightAscent   : 50%;
+    --lightAscent   : 30%;
     --linkColor     : hsla(var(--hueAscent), var(--satAscent), var(--lightAscent), var(--alpha));
     --linkColorHover: hsla(var(--hueAscent), var(--satAscent), var(--lightAscent), .9);
 
@@ -64,6 +64,8 @@ main,
 
 h1 {
     font-size: clamp(1.5em, 5vw, 3em);
+
+    color: red;
 }
 
 h2 {
@@ -101,11 +103,12 @@ main {
 a {
     position       : relative;
     text-decoration: none;
-    color          : var(--linkColor, aqua);
-
+    color          : var(--linkColor) !important;
+    transition     : color .3s ease-in-out;
 
     &:visited {
         text-decoration: none;
+        color          : var(--linkColor, aqua);
     }
 
     &:hover {
@@ -243,7 +246,7 @@ blockquote {
 
 
 
-
+//HomepageLayout
 
 .postgrid {
     display              : grid;
