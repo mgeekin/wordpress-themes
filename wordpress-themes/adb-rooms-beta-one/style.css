@@ -1,3 +1,5 @@
+@charset "UTF-8";
+/* Reset styles: This section includes CSS rules that reset the default styles applied by browsers to HTML elements, allowing you to start from a clean slate. */
 /* 
 theme name: ADB Rooms Beta One
 theme URI: http://mgeek.in/wordpress-themes/adb-rooms-beta-one/
@@ -6,3 +8,381 @@ author URI: http://mgeek.in/
 description: ADB Rooms Beta One is a premium wordpress theme for adb rooms. It is a responsive theme and is compatible with all the latest browsers. 
 version: 0.1
 */
+@import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Montserrat:ital,wght@0,400;1,300;1,400&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;0,200;1,100&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  box-sizing: border-box;
+}
+
+:root {
+  --hue: 332;
+  --hue: 340;
+  --sat: 80%;
+  --light: 40%;
+  --alpha: 1;
+  --hueLink: 332;
+  --hueAscent: 340;
+  --satAscent: 100%;
+  --lightAscent: 60%;
+  --linkColor: hsla(var(--hueLink), var(--satAscent), var(--lightAscent), var(--alpha));
+  --linkColorHover: hsla(var(--hueLink), var(--satAscent), var(--lightAscent), .9);
+  --ascentColor: hsla(var(--hue), 90%, 50%, var(--alpha));
+  --colorText: hsla(var(--hue), 10%, 30%, var(--alpha));
+  --colorTextGrayLight: hsla(var(--hue), 5%, 40%, var(--alpha));
+  --colorTextGrayDark: hsla(var(--hue), 20%, 50%, var(--alpha));
+  --headerHeight: 3em;
+  --backgroundLight: hsl(var(--hue), 2%, 95%);
+  --backgroundDark: hsl(var(--hue), 90%, 5%);
+  --shadowLight: hsla(var(--hue), 2%, 95%, .5);
+  --shadowDark: hsla(var(--hue), 90%, 5%, .5);
+  --footerBackground: hsl(var(--hue), 80%, 20%);
+  --footerColor: white;
+  --footerLinkColor: hsla(--hueAscent, 10%, 90%, .9);
+}
+
+/* Typography: This section includes CSS rules for setting the font family, size, weight, line-height, and other properties related to text. */
+body {
+  font-family: "Poppins", "Courier New", Courier, monospace;
+  background: var(--backgroundLight, white);
+  color: var(--colorText, black);
+  font-size: 0.8rem;
+  font-family: "Open Sans", sans-serif;
+  color-scheme: light dark;
+  scroll-behavior: smooth;
+  scroll-snap-align: start;
+  line-height: 1.6em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Cantarell", "Montserrat", sans-serif;
+  font-weight: 400;
+  color: var(--colorTextGrayDark);
+  padding: 0;
+  padding-bottom: 0.5em;
+  margin: 0;
+}
+
+main,
+.container {
+  max-width: calc(100% - 2em);
+  margin: 0 auto;
+  padding: 0 1em;
+}
+
+h1 {
+  font-size: clamp(1.5em, 5vw, 3em);
+}
+
+h2 {
+  font-size: clamp(1.3em, 5vw, 2.5em);
+}
+
+h3 {
+  font-size: clamp(1.3em, 5vw, 2.5em);
+  font-style: italic;
+}
+
+h4 {
+  font-size: clamp(1.1em, 5vw, 2em);
+}
+
+h5 {
+  font-size: clamp(1.1em, 10vw, 2em);
+  font-style: italic;
+}
+
+/* Colors: This section includes CSS rules for defining the colors used throughout your website, such as background colors, text colors, and border colors. */
+/* Layout: This section includes CSS rules for controlling the positioning and size of elements on the page, such as margins, padding, float, and display. */
+main {
+  position: static;
+  top: 4em;
+  margin: 0 auto;
+  padding-inline: clamp(1em, 10vw, 20%);
+  min-height: 90vh;
+}
+
+/* Navigation: This section includes CSS rules for styling navigation menus, including dropdowns, hover effects, and active states. */
+a {
+  position: relative;
+  text-decoration: none;
+  color: var(--linkColor);
+  transition: color 0.3s ease-in-out;
+}
+a:is(:visited, :link) {
+  text-decoration: none;
+  color: var(--linkColor, aqua);
+}
+a:after {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: "";
+  width: 0%;
+  border-bottom: 0.2ex solid var(--linkColorHover);
+  transition: width 0.3s ease-in-out;
+  margin-bottom: 0.3ex;
+}
+
+section {
+  padding: 2em;
+}
+
+p {
+  padding-block: 0.5em;
+}
+
+blockquote {
+  padding-block: 0.5em;
+  padding-inline: 1em;
+  border-left: 5px solid #ccc;
+  font-style: italic;
+  position: relative;
+}
+blockquote:before {
+  content: "“";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 2em;
+  color: #ccc;
+}
+
+/* Forms: This section includes CSS rules for styling form elements, such as input fields, checkboxes, and radio buttons. */
+/* Buttons: This section includes CSS rules for styling buttons, including hover and active states. */
+/* Images: This section includes CSS rules for controlling the size and alignment of images on the page. */
+/* Media queries: This section includes CSS rules that apply only when certain conditions are met, such as the size of the screen or device orientation. */
+#header,
+.header {
+  font-size: 0.8em;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  position: sticky;
+  top: 0px;
+  min-height: var(--headerHeight, 3em);
+  padding: 1em;
+  z-index: 1000;
+  font-weight: 700;
+  box-shadow: 2px 0px 4px gray;
+  text-transform: capitalize;
+  transition: all 0.2s ease-in-out;
+  background-color: var(--backgroundLight);
+}
+#header:hover,
+.header:hover {
+  box-shadow: 2px 1px 5px var(--ascentColor);
+}
+#header #logo,
+.header #logo {
+  height: 1.5em;
+}
+#header .header-nav,
+.header .header-nav {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+#header #searchForm,
+.header #searchForm {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#header #searchInput,
+#header #searchSubmit,
+.header #searchInput,
+.header #searchSubmit {
+  background-color: 1px solid var(--backgroundLight);
+  color: var(--colorTextGrayDark);
+  padding: 2px;
+  border-radius: 0.5em;
+  border: none;
+  box-shadow: 0 0 0 1px var(--colorTextGrayDark);
+  margin-inline: 5px;
+}
+#header #searchSubmit,
+.header #searchSubmit {
+  color: white;
+  background-color: var(--ascentColor);
+}
+#header a,
+.header a {
+  color: var(--ascentColor);
+  transition: all 0.3s ease-in-out;
+}
+#header a:hover,
+.header a:hover {
+  color: var(--linkColorHover, hsl(332, 100%, 50%));
+}
+#header .menu,
+.header .menu {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+#header .menu li,
+.header .menu li {
+  flex-grow: 0;
+  margin-inline: 0.5em;
+  min-width: 8em;
+}
+#header .menu li a,
+.header .menu li a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  border-radius: 0.5em;
+  transition: background-color 0.3s ease-in-out;
+}
+#header .menu li a:hover,
+.header .menu li a:hover {
+  background-color: var(--ascentColor);
+  color: #FFF !important;
+}
+#header .menu .current_page_item a,
+.header .menu .current_page_item a {
+  background-color: var(--backgroundDark);
+  color: #FFF !important;
+}
+
+footer {
+  --translate: calc(100% - 4em);
+  position: fixed;
+  bottom: 0;
+  --time: .5s;
+  width: 100%;
+  height: 4em;
+}
+footer .footer {
+  position: relative;
+  padding: 5em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  width: 100%;
+  background-color: var(--footerBackground, #5f0005);
+  color: var(--footerColor, #FFF);
+  transform: translateY(var(--translate));
+  transition: transform var(--time) ease-in-out;
+}
+footer .footer a {
+  color: var(--footerLinkColor, #FFF);
+}
+footer:hover {
+  --translate: 0%;
+  height: auto;
+}
+footer .copyrights {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: grid;
+  grid-gap: 1em;
+  grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+  padding: 2px;
+  background-color: var(--backgroundDark);
+  color: var(--colorTextGrayLight);
+  font-size: 0.8em;
+  font-weight: 500;
+  text-transform: capitalize;
+  box-shadow: 2px 0px 4px var(--shadowLight);
+  font-size: 0.8em;
+  text-align: center;
+  transition: all var(--time) ease-in-out;
+}
+footer .copyrights a {
+  color: var(--colorTextGrayLight);
+}
+footer .copyrights:hover {
+  font-size: 1em;
+  padding: 1em;
+  --translate: 0%;
+}
+
+.postgrid {
+  display: grid;
+  grid-gap: 2em;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  padding: 4em;
+}
+.postgrid .postgrid-item {
+  color: var(--colorText1);
+  position: relative;
+  border-radius: 0.5em;
+  box-shadow: 0px 1px 1px var(--shadowDark);
+  background-color: hsla(var(--hueAscent), var(--satAscent), var(--lightAscent), 0.02);
+  transition: all 0.3s ease-in-out;
+}
+.postgrid .postgrid-item:hover {
+  filter: brightness(1.2);
+  box-shadow: 1px 1px 5px var(--shadowDark);
+}
+.postgrid .postgrid-item .postgrid-item-image {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: 200px;
+}
+.postgrid .postgrid-item .postgrid-item-image img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  max-width: 100%;
+  border-radius: 0.5em 0.5em 0 0;
+}
+.postgrid .postgrid-item .postgrid-item-content {
+  padding: 1em;
+}
+.postgrid .postgrid-item .postgrid-item-content .postgrid-cost {
+  display: block;
+  font-weight: 700;
+}
+.postgrid .postgrid-item .postgrid-item-content .postgrid-map {
+  display: block;
+  font-weight: 300;
+  font-style: italic;
+}
+.postgrid .postgrid-item .postgrid-item-content h1,
+.postgrid .postgrid-item .postgrid-item-content h2,
+.postgrid .postgrid-item .postgrid-item-content h3 {
+  color: var(--ascentColor);
+  padding: 0;
+  margin: 0;
+}
+.postgrid .postgrid-item .postgrid-item-title {
+  color: #555;
+  font-style: normal;
+}
+
+@media (400 < width < 800) {
+  .postgrid {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+@media screen and (max-width: 400px) {
+  main {
+    padding: 0 !important;
+    margin: 1em auto;
+  }
+  .postgrid {
+    padding: 1em;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}/*# sourceMappingURL=style.css.map */

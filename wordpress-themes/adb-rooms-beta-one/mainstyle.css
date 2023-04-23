@@ -1,5 +1,13 @@
 @charset "UTF-8";
 /* Reset styles: This section includes CSS rules that reset the default styles applied by browsers to HTML elements, allowing you to start from a clean slate. */
+/* 
+theme name: ADB Rooms Beta One
+theme URI: http://mgeek.in/wordpress-themes/adb-rooms-beta-one/
+author: MGeek
+author URI: http://mgeek.in/
+description: ADB Rooms Beta One is a premium wordpress theme for adb rooms. It is a responsive theme and is compatible with all the latest browsers. 
+version: 0.1
+*/
 @import url("https://fonts.googleapis.com/css2?family=Cantarell&family=Montserrat:ital,wght@0,400;1,300;1,400&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;0,200;1,100&display=swap");
 * {
   margin: 0;
@@ -12,13 +20,13 @@
 :root {
   --hue: 332;
   --sat: 80%;
-  --light: 50%;
+  --light: 40%;
   --alpha: 1;
   --hueAscent: 332;
   --satAscent: 100%;
-  --lightAscent: 50%;
+  --lightAscent: 30%;
   --linkColor: hsla(var(--hueAscent), var(--satAscent), var(--lightAscent), var(--alpha));
-  --linkColorHover: hsla(var(--hueAscent), var(--satAscent), var(--lightAscent), .8);
+  --linkColorHover: hsla(var(--hueAscent), var(--satAscent), var(--lightAscent), .9);
   --headerHeight: 3em;
 }
 
@@ -58,6 +66,7 @@ main,
 
 h1 {
   font-size: clamp(1.5em, 5vw, 3em);
+  color: red;
 }
 
 h2 {
@@ -91,10 +100,12 @@ main {
 a {
   position: relative;
   text-decoration: none;
-  color: var(--linkColor, aqua);
+  color: var(--linkColor) !important;
+  transition: color 0.3s ease-in-out;
 }
 a:visited {
   text-decoration: none;
+  color: var(--linkColor, aqua);
 }
 a:hover {
   color: var(--linkColorHover, hsl(332, 100%, 50%));
@@ -200,7 +211,13 @@ blockquote:before {
   transform: scale(1.02);
   filter: brightness(1.2);
 }
-.postgrid .postgrid-item .postgrid-item-image > img {
+.postgrid .postgrid-item .postgrid-item-image {
+  position: relative;
+  overflow: hidden;
+  max-width: 100%;
+  height: 200px;
+}
+.postgrid .postgrid-item .postgrid-item-image img {
   -o-object-fit: cover;
      object-fit: cover;
   max-width: 100%;

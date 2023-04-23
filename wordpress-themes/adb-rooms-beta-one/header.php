@@ -29,12 +29,19 @@
             <a href="/" id="home">
                 <img id="logo" class="logo" src="<?php   echo get_template_directory_uri() ; ?>/img/adbroomslogo.png"
                     class="filter-hue" alt="<?php bloginfo( " name" );?>" title="
-                <?php bloginfo( " tagname" );?>" />
+                <?php bloginfo( "tagname" );?>" />
             </a>
-            <span>
-                <?include("searchPart.php") ?>
-            </span>
-            <span>login</span>
+            <div class="header-nav">
+                <?php  get_search_form( ); ?>
+                <?php
+                    $args=array(
+                        "theme_location"=>"primary"
+                    );
+                    
+                    wp_nav_menu($args);
+                    ?>
+            </div>
+
 
 
 

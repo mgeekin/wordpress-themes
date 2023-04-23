@@ -7,3 +7,4 @@
 ./wordpress/*
 db_data
 wordpress
+wordpress_db_data

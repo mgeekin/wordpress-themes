@@ -5,7 +5,7 @@ services:
   db:
     image: mysql:5.7
     volumes:
-      - ./db_data:/var/lib/mysql
+      - ./wordpress_db_data:/var/lib/mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: password
@@ -24,9 +24,10 @@ services:
       - "80:80"
     restart: always
     volumes:
-      - "./wordpress/:/var/www/html"
+      # - "./wordpress/:/var/www/html"
       - "./wordpress-themes/adb-rooms-beta-one:/var/www/html/wp-content/themes/adb-rooms-beta-one"
-      - "./wordpress-themes/traveller-agency-child:/var/www/html/wp-content/themes/traveller-agency-child"
+      # - "./wordpress-themes/traveller-agency-child:/var/www/html/wp-content/themes/traveller-agency-child"
+      - "./wordpress-themes/twentytwentythree-child-adbrooms:/var/www/html/wp-content/themes/twentytwentythree-child-adbrooms"
     environment:
       WORDPRESS_DB_HOST: db:3306
       WORDPRESS_DB_USER: wordpress
@@ -58,4 +59,4 @@ networks:
 
     #Volumes
 volumes:
-  db_data:
+  wordpress_db_data:

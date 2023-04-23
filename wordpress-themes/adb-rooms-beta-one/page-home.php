@@ -1,3 +1,7 @@
+<!-- 
+    template name: Home
+ -->
+
 <?php get_header(); ?>
 
 <?php

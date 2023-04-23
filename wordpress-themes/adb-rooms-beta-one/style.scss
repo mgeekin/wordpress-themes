@@ -1,0 +1,505 @@
+/* Reset styles: This section includes CSS rules that reset the default styles applied by browsers to HTML elements, allowing you to start from a clean slate. */
+/* 
+theme name: ADB Rooms Beta One
+theme URI: http://mgeek.in/wordpress-themes/adb-rooms-beta-one/
+author: MGeek
+author URI: http://mgeek.in/
+description: ADB Rooms Beta One is a premium wordpress theme for adb rooms. It is a responsive theme and is compatible with all the latest browsers. 
+version: 0.1
+*/
+
+
+* {
+    margin         : 0;
+    padding        : 0;
+    text-decoration: none;
+    list-style     : none;
+    box-sizing     : border-box;
+}
+
+
+
+
+
+:root {
+    --hue               : 332;
+    --hue               : 340;
+    --sat               : 80%;
+    --light             : 40%;
+    --alpha             : 1;
+    --hueLink           : 332;
+    --hueAscent         : 340;
+    --satAscent         : 100%;
+    --lightAscent       : 60%;
+    --linkColor         : hsla(var(--hueLink), var(--satAscent), var(--lightAscent), var(--alpha));
+    --linkColorHover    : hsla(var(--hueLink), var(--satAscent), var(--lightAscent), .9);
+    --ascentColor       : hsla(var(--hue), 90%, 50%, var(--alpha));
+    --colorText         : hsla(var(--hue), 10%, 30%, var(--alpha));
+    --colorTextGrayLight: hsla(var(--hue), 5%, 40%, var(--alpha));
+    --colorTextGrayDark : hsla(var(--hue), 20%, 50%, var(--alpha));
+    --headerHeight      : 3em;
+    --backgroundLight   : hsl(var(--hue), 2%, 95%);
+    --backgroundDark    : hsl(var(--hue), 90%, 5%);
+    --shadowLight       : hsla(var(--hue), 2%, 95%, .5);
+    --shadowDark        : hsla(var(--hue), 90%, 5%, .5);
+    --footerBackground  : hsl(var(--hue), 80%, 20%);
+    --footerColor       : white;
+    --footerLinkColor   : hsla(--hueAscent, 10%, 90%, .9);
+}
+
+/* Typography: This section includes CSS rules for setting the font family, size, weight, line-height, and other properties related to text. */
+@import url('https://fonts.googleapis.com/css2?family=Cantarell&family=Montserrat:ital,wght@0,400;1,300;1,400&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;0,200;1,100&display=swap');
+
+body {
+    font-family      : 'Poppins', 'Courier New', Courier, monospace;
+    background       : var(--backgroundLight, white);
+    color            : var(--colorText, black);
+    font-size        : .8rem;
+    font-family      : 'Open Sans', sans-serif;
+    color-scheme     : light dark;
+    scroll-behavior  : smooth;
+    scroll-snap-align: start;
+    line-height      : 1.6em;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family   : 'Cantarell', 'Montserrat', sans-serif;
+    font-weight   : 400;
+    color         : var(--colorTextGrayDark);
+    padding       : 0;
+    padding-bottom: .5em;
+    margin        : 0;
+
+}
+
+main,
+.container {
+    max-width: calc(100% - 2em);
+    margin   : 0 auto;
+    padding  : 0 1em;
+}
+
+h1 {
+    font-size: clamp(1.5em, 5vw, 3em);
+}
+
+h2 {
+    font-size: clamp(1.3em, 5vw, 2.5em);
+}
+
+h3 {
+    font-size : clamp(1.3em, 5vw, 2.5em);
+    font-style: italic;
+}
+
+h4 {
+    font-size: clamp(1.1em, 5vw, 2em);
+}
+
+h5 {
+    font-size : clamp(1.1em, 10vw, 2em);
+    font-style: italic;
+}
+
+
+/* Colors: This section includes CSS rules for defining the colors used throughout your website, such as background colors, text colors, and border colors. */
+/* Layout: This section includes CSS rules for controlling the positioning and size of elements on the page, such as margins, padding, float, and display. */
+
+
+
+main {
+    position      : static;
+    top           : 4em;
+    margin        : 0 auto;
+    padding-inline: clamp(1em, 10vw, 20%);
+    min-height    : 90vh;
+}
+
+/* Navigation: This section includes CSS rules for styling navigation menus, including dropdowns, hover effects, and active states. */
+a {
+    position       : relative;
+    text-decoration: none;
+    color          : var(--linkColor);
+    transition     : color .3s ease-in-out;
+
+    &:is(:visited, :link) {
+        text-decoration: none;
+        color          : var(--linkColor, aqua);
+    }
+
+
+
+    &:after {
+        position        : absolute;
+        left            : 0;
+        top             : 0;
+        content         : "";
+        width           : 00%;
+        // height       : 100%;
+        border-bottom   : .2ex solid var(--linkColorHover);
+        transition      : width .3s ease-in-out;
+        margin-bottom   : .3ex;
+
+    }
+
+
+}
+
+section {
+    padding: 2em;
+}
+
+p {
+    padding-block: .5em;
+
+}
+
+blockquote {
+    padding-block : .5em;
+    padding-inline: 1em;
+    border-left   : 5px solid #ccc;
+    font-style    : italic;
+    position      : relative;
+
+    &:before {
+        content  : '“';
+        position : absolute;
+        left     : 0;
+        top      : 0;
+        font-size: 2em;
+        color    : #ccc;
+    }
+}
+
+/* Forms: This section includes CSS rules for styling form elements, such as input fields, checkboxes, and radio buttons. */
+/* Buttons: This section includes CSS rules for styling buttons, including hover and active states. */
+/* Images: This section includes CSS rules for controlling the size and alignment of images on the page. */
+/* Media queries: This section includes CSS rules that apply only when certain conditions are met, such as the size of the screen or device orientation. */
+
+
+
+
+
+
+
+
+
+
+
+
+#header,
+.header {
+    font-size: .8em;
+
+    display        : flex;
+    flex-direction : row;
+    flex-wrap      : wrap;
+    justify-content: space-between;
+    position       : sticky;
+    top            : 0px;
+    min-height     : var(--headerHeight, 3em);
+    padding        : 1em;
+    z-index        : 1000;
+    font-weight    : 700;
+    box-shadow     : 2px 0px 4px gray;
+
+    text-transform  : capitalize;
+    transition      : all .2s ease-in-out;
+    background-color: var(--backgroundLight);
+
+    &:hover {
+        box-shadow: 2px 1px 5px var(--ascentColor);
+    }
+
+    #logo {
+        height   : 1.5em;
+        // margin: 5px;
+    }
+
+
+
+    .header-nav {
+        flex-grow      : 1;
+        display        : flex;
+        flex-direction : row;
+        flex-wrap      : wrap;
+        justify-content: space-between;
+    }
+
+    // search
+    #searchForm {
+        flex-grow         : 1;
+        display           : flex;
+        flex-direction    : row;
+        justify-content   : center;
+        align-items       : center;
+        // width          : 100%;
+
+    }
+
+    #searchInput,
+    #searchSubmit {
+        background-color: 1px solid var(--backgroundLight);
+        color           : var(--colorTextGrayDark);
+        padding         : 2px;
+        border-radius   : .5em;
+        border          : none;
+        box-shadow      : 0 0 0 1px var(--colorTextGrayDark);
+        margin-inline   : 5px
+    }
+
+    #searchSubmit {
+        color              : white;
+        background-color   : var(--ascentColor);
+        // border          : 1px;
+    }
+
+    a {
+        color     : var(--ascentColor);
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            color: var(--linkColorHover, hsl(332, 100%, 50%));
+
+            // &:after {
+            //     width: 100%;
+            // }
+
+        }
+    }
+
+
+
+
+
+    .menu {
+        display        : flex;
+        flex-direction : row;
+        list-style     : none;
+        flex-wrap      : wrap;
+        justify-content: flex-end;
+        font-family    : Arial, Helvetica, sans-serif;
+        font-weight    : 900;
+        text-transform : uppercase;
+
+        li {
+            flex-grow: 0;
+
+
+            margin-inline: .5em;
+            min-width    : 8em;
+
+            a {
+                display        : flex;
+                justify-content: center;
+                align-items    : center;
+                padding        : 2px;
+                border-radius  : .5em;
+                transition     : background-color .3s ease-in-out;
+
+                &:hover {
+                    background-color: var(--ascentColor);
+                    color           : #FFF !important;
+                }
+            }
+
+
+        }
+
+        .current_page_item {
+            a {
+
+                background-color: var(--backgroundDark);
+                color           : #FFF !important;
+            }
+        }
+    }
+
+
+}
+
+
+
+
+
+footer {
+    --translate: calc(100% - 4em);
+    position   : fixed;
+    bottom     : 0;
+    --time     : .5s;
+    width      : 100%;
+    height     : 4em;
+
+    .footer {
+        position             : relative;
+        padding              : 5em;
+        display              : grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        width                : 100%;
+        background-color     : var(--footerBackground, #5f0005);
+        color                : var(--footerColor, #FFF);
+        transform            : translateY(var(--translate));
+        transition           : transform var(--time) ease-in-out;
+
+
+        a {
+            color: var(--footerLinkColor, #FFF);
+        }
+    }
+
+    &:hover {
+        --translate: 0%;
+        height     : auto;
+    }
+
+
+
+
+
+
+
+    .copyrights {
+
+        position                : fixed;
+        bottom                  : 0;
+        width                   : 100%;
+        display                 : grid;
+        grid-gap                : 1em;
+        grid-template-columns   : repeat(auto-fit, minmax(100px, 1fr));
+        padding                 : 2px;
+        background-color        : var(--backgroundDark);
+        color                   : var(--colorTextGrayLight);
+        font-size               : .8em;
+        font-weight             : 500;
+        text-transform          : capitalize;
+        // border-top           : 1px solid #ccc;
+        box-shadow              : 2px 0px 4px var(--shadowLight);
+        font-size               : .8em;
+        text-align              : center;
+        transition              : all var(--time) ease-in-out;
+
+        a {
+            color: var(--colorTextGrayLight);
+        }
+
+        &:hover {
+            font-size  : 1em;
+            padding    : 1em;
+            --translate: 0%;
+
+        }
+    }
+
+
+
+
+}
+
+
+
+
+//HomepageLayout
+
+.postgrid {
+    display              : grid;
+    grid-gap             : 2em;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding              : 4em;
+
+
+    .postgrid-item {
+        color   : var(--colorText1);
+        position: relative;
+
+        border-radius   : .5em;
+        box-shadow      : 0px 1px 1px var(--shadowDark);
+        background-color: hsla(var(--hueAscent), var(--satAscent), var(--lightAscent), .02);
+
+        transition: all .3s ease-in-out;
+
+        &:hover {
+            // transform: scale(1.02);
+            filter: brightness(1.2);
+
+            box-shadow: 1px 1px 5px var(--shadowDark);
+        }
+
+        .postgrid-item-image {
+            position : relative;
+            overflow : hidden;
+            max-width: 100%;
+            height   : 200px;
+
+            img {
+                object-fit   : cover;
+                max-width    : 100%;
+                border-radius: .5em .5em 0 0;
+
+            }
+        }
+
+
+
+        .postgrid-item-content {
+            padding: 1em;
+
+            .postgrid-cost {
+                display    : block;
+                font-weight: 700;
+            }
+
+            .postgrid-map {
+                display    : block;
+                font-weight: 300;
+                font-style : italic;
+            }
+
+            h1,
+            h2,
+            h3 {
+                color  : var(--ascentColor);
+                padding: 0;
+                margin : 0;
+            }
+        }
+
+        .postgrid-item-title {
+            color     : #555;
+            font-style: normal;
+        }
+    }
+}
+
+
+
+
+//Tablet
+@media (400 < width < 800) {
+    .postgrid {
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+}
+
+
+//Mobile
+@media screen and (max-width: 400px) {
+
+    main {
+        padding: 0 !important;
+        margin : 1em auto;
+
+
+    }
+
+    .postgrid {
+
+        padding: 1em;
+
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+}
